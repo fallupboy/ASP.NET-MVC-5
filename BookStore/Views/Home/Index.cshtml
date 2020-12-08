@@ -1,0 +1,52 @@
+﻿
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Book Store</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div>
+        <h1 class="title">Book Store</h1>
+        <table class="table">
+            <tr class="tr_main">
+                <td><p>Name</p></td>
+                <td><p>Author</p></td>
+                <td><p>Quantity</p></td>
+                <td><p>Price ($)</p></td>
+                <td><p>Buy | Edit</p></td>
+            </tr>
+            @foreach (var b in ViewBag.Books)
+            {
+                <tr class="tr_content">
+                    <td><p>@b.Id. @b.Name</p></td>
+                    <td><p>@b.Author</p></td>
+                    <td><p>@b.Quantity</p></td>
+                    <td><p>@b.Price</p></td>
+                    <td>
+                        <p>
+                            @if (b.Quantity > 0)
+                            {
+                                @Html.ActionLink("Buy", "Buy", new { id = b.Id }) <text> | </text>
+                            }
+                            else
+                            {
+                                <text>None left | </text>
+                            }
+
+                            @Html.ActionLink("Edit", "Edit", new { id = b.Id })
+                        </p>
+                    </td>
+                </tr>
+            }
+            <td><h5>@Html.ActionLink("Add Book", "Add") | @Html.ActionLink("All Purchases", "/Purchases")</h5></td>
+        </table>
+    </div>
+</body>
+</html>

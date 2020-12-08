@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Buy</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div>
+        <h3>Purchase Form</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.BookId" name="BookId" />
+            <table class="table">
+                <tr>
+                    <td><p>Enter your name: </p></td>
+                    <td><input type="text" name="Person" /></td>
+                </tr>
+                <tr>
+                    <td><p>Enter your address: </p></td>
+                    <td><input type="text" name="Address" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Buy" /></td>
+                </tr>
+            </table>
+            <p><a href="/Home">Back to Store</a></p>
+        </form>
+    </div>
+</body>
+</html>

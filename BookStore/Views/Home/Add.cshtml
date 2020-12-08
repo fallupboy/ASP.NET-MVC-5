@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div>
+        <h3>Add New Book</h3>
+        <form method="post" action="">
+            <table class="table">
+                <tr>
+                    <td><p>Enter book title: </p></td>
+                    <td><input type="text" name="Name" /></td>
+                </tr>
+                <tr>
+                    <td><p>Enter author's name: </p></td>
+                    <td><input type="text" name="Author" /></td>
+                </tr>
+                <tr>
+                    <td><p>Enter quantity: </p></td>
+                    <td><input type="number" name="Quantity" /></td>
+                </tr>
+                <tr>
+                    <td><p>Enter price: </p></td>
+                    <td><input type="number" name="Price" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Add" /></td>
+                </tr>
+            </table>
+            <p><a href="/Home">Back to Store</a></p>
+        </form>
+    </div>
+</body>
+</html>
