@@ -1,0 +1,45 @@
+﻿@model BookStore.Models.UserProfile
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-5">
+            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <text>First Name</text>
+                            @Html.TextBoxFor(m => m.UserFirstName, "", new { @class = "form-control", @placeholder = "First Name" })
+                            @Html.ValidationMessageFor(m => m.UserFirstName, "", new { @class = "badge badge-danger" })
+                        </div>
+                        <div class="form-group">
+                            <text>Second Name</text>
+                            @Html.TextBoxFor(m => m.UserSecondName, "", new { @class = "form-control", @placeholder = "Second Name" })
+                            @Html.ValidationMessageFor(m => m.UserSecondName, "", new { @class = "badge badge-danger" })
+                        </div>
+                        <div class="form-group">
+                            <text>Email</text>
+                            @Html.TextBoxFor(m => m.UserEmail, "", new { @class = "form-control", @placeholder = "Email" })
+                            @Html.ValidationMessageFor(m => m.UserEmail, "", new { @class = "badge badge-danger" })
+                        </div>
+                        <div class="form-group">
+                            <text>Password</text>
+                            @Html.PasswordFor(m => m.UserPassword, new { @class = "form-control", @placeholder = "Password" })
+                            @Html.ValidationMessageFor(m => m.UserPassword, "", new { @class = "badge badge-danger" })
+                            <h4>@ViewBag.error</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-info" value="Register" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+

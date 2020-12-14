@@ -16,17 +16,14 @@
         <h3>Purchase Form</h3>
         <form method="post" action="">
             <input type="hidden" value="@ViewBag.BookId" name="BookId" />
+            <input type="hidden" value="@ViewBag.UserId" name="UserId" />
             <table class="table">
                 <tr>
-                    <td><p>Enter your name: </p></td>
-                    <td><input type="text" name="Person" /></td>
+                    <text>Enter delivery address: </text>
+                    <td><input class="form-control" placeholder="Address" type="text" name="Address" /></td>
                 </tr>
                 <tr>
-                    <td><p>Enter your address: </p></td>
-                    <td><input type="text" name="Address" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Buy" /></td>
+                    <td><input class="btn btn-info" type="submit" value="Buy" /></td>
                 </tr>
             </table>
             <p><a href="/Home">Back to Store</a></p>
