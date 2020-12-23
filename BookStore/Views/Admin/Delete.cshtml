@@ -1,0 +1,35 @@
+﻿@model BookStore.Models.Book
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <h3>Delete Book</h3>
+    <table class="table">
+        <tr class="tr_content">
+            <td>@Html.LabelFor(m => m.Id)</td>
+            <td>@Html.TextBoxFor(m => m.Id, new { @class = "form-control", @readonly = "readonly" })</td>
+        </tr>
+
+        <tr class="tr_content">
+            <td>@Html.LabelFor(m => m.Author)</td>
+            <td>@Html.TextBoxFor(m => m.Author, new { @class = "form-control", @readonly = "readonly" })</td>
+        </tr>
+
+        <tr class="tr_content">
+            <td>@Html.LabelFor(m => m.Quantity)</td>
+            <td>@Html.TextBoxFor(m => m.Quantity, new { @class = "form-control", @readonly = "readonly" })</td>
+        </tr>
+
+        <tr class="tr_content">
+            <td>@Html.LabelFor(m => m.Price)</td>
+            <td>@Html.TextBoxFor(m => m.Price, new { @class = "form-control", @readonly = "readonly" })</td>
+        </tr>
+    </table>
+    <input type="submit" class="btn btn-danger" value="Delete" />
+    <a href="@Url.Action("Index", "Home")" class="btn btn-info">Cancel</a>
+}
+
+
+

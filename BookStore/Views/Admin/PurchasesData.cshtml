@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Purchases</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div>
+        <h3>All Purchases</h3>
+        <table class="table">
+            <tr class="tr_main">
+                <td><p>№</p></td>
+                <td><p>Customer ID</p></td>
+                <td><p>Book Id</p></td>
+                <td><p>Delivery Address</p></td>
+                <td><p>Date</p></td>
+            </tr>
+            @foreach (var b in ViewBag.Purchases)
+            {
+                <tr class="tr_content">
+                    <td><p>@b.Id</p></td>
+                    <td><p>@b.UserId</p></td>
+                    <td><p>@b.BookId</p></td>
+                    <td><p>@b.Address</p></td>
+                    <td><p>@b.Date</p></td>
+                </tr>
+            }
+        </table>
+        <a href="@Url.Action("Index", "Home")" class="btn btn-info">Back To Store</a>
+    </div>
+</body>
+</html>

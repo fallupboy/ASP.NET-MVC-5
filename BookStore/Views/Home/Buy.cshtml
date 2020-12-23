@@ -22,11 +22,9 @@
                     <text>Enter delivery address: </text>
                     <td><input class="form-control" placeholder="Address" type="text" name="Address" /></td>
                 </tr>
-                <tr>
-                    <td><input class="btn btn-info" type="submit" value="Buy" /></td>
-                </tr>
             </table>
-            <p><a href="/Home">Back to Store</a></p>
+            <input class="btn btn-success" type="submit" value="Buy" />
+            <a href="@Url.Action("Index", "Home")" class="btn btn-info">Cancel</a>
         </form>
     </div>
 </body>

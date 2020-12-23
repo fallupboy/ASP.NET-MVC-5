@@ -9,18 +9,18 @@ namespace BookStore.Models
     public class UserProfile
     {
         [Key]
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public string UserFirstName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
-        public string UserSecondName { get; set; }
+        public string LastName { get; set; }
 
         [Required]
-        public string UserEmail { get; set; }
+        public string Email { get; set; }
 
         [Required]
-        public string UserPassword { get; set; }
+        public string Password { get; set; }
     }
 }

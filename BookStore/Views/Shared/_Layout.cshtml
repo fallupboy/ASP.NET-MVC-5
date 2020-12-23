@@ -21,19 +21,13 @@
                 <ul class="nav navbar-nav">
                     @if (Session["idUser"] != null)
                     {
-                        <li>@Html.ActionLink("User Dashboard", "UserDashBoard", "Home")</li>
+                        <li>@Html.ActionLink("User Dashboard", "UserDashBoard", "Users")</li>
+                        <li><a href="@Url.Action("Logout", "Users")" class="btn btn-danger">Logout</a></li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Users")</li>
                     }
-
-                    <li>
-                        @if (Session["FullName"] != null)
-                        {
-                            <a href="@Url.Action("Logout","Home")" class="btn btn-danger">Logout</a>
-                        }
-                    </li>
                 </ul>
             </div>
         </div>
