@@ -8,6 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/counter.css" />
     <title>Buy</title>
     @Styles.Render("~/Content/css")
 </head>
@@ -17,15 +18,15 @@
         <form method="post" action="">
             <input type="hidden" value="@ViewBag.BookId" name="BookId" />
             <input type="hidden" value="@ViewBag.UserId" name="UserId" />
-            <table class="table">
-                <tr>
-                    <text>Enter delivery address: </text>
-                    <td><input class="form-control" placeholder="Address" type="text" name="Address" /></td>
-                </tr>
-            </table>
+            <input type="number" name="Amount" min="1" max="@ViewBag.Quantity" value="1" /> <br /> <br />
+            <h5>Enter delivery address:</h5>
+            <input class="form-control" placeholder="Address" type="text" name="Address" style="margin-bottom: 10px;" />
             <input class="btn btn-success" type="submit" value="Buy" />
             <a href="@Url.Action("Index", "Home")" class="btn btn-info">Cancel</a>
+            <h5>@ViewBag.TooManyError</h5>
         </form>
     </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/handleCounter.js"></script>
 </body>
 </html>

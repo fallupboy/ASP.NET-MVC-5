@@ -19,9 +19,13 @@ namespace BookStore.Controllers
         BookContext db = new BookContext();
 
         // Show all books on the main page
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
             var bookList = db.Books.OrderBy(book => book.Name).ToList();
+            if (search != null)
+            {
+                bookList = db.Books.Where(b => b.Name.Contains(search) || b.Author.Contains(search)).OrderBy(b => b.Name).ToList();
+            }
             ViewBag.Books = bookList;
             return View();
         }
@@ -30,6 +34,9 @@ namespace BookStore.Controllers
         [HttpGet]
         public ActionResult Buy(int id)
         {
+            var book = db.Books.FirstOrDefault(b => b.Id == id);
+            ViewBag.Quantity = book.Quantity;
+
             if (Session["idUser"] != null)
             {
                 ViewBag.BookId = id;
@@ -42,7 +49,7 @@ namespace BookStore.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Buy(Purchase purchase)
+        public ActionResult Buy(Purchase purchase, int Amount)
         {
             IEnumerable<Book> books = db.Books;
             foreach (var b in books)
@@ -51,7 +58,7 @@ namespace BookStore.Controllers
                 {
                     if (b.Quantity > 0)
                     {
-                        b.Quantity--;
+                        b.Quantity -= Amount;
                         break;
                     }
                     else

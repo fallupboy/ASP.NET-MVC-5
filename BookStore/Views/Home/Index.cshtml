@@ -14,6 +14,14 @@
 <body>
     <div>
         <h1 class="title">Book Store</h1>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <div style="display: flex;">
+                <input type="text" class="form-control" name="search" placeholder="Search..." style="margin-right: 5px" />
+                <input type="submit" class="btn btn-info" name="submit" value="Search" style="outline: none;" />
+            </div>
+        }
+
         <table class="table">
             <tr class="tr_main">
                 <td><p>Name</p></td>
@@ -36,11 +44,11 @@
                     <td><p>@b.Author</p></td>
                     <td><p>@b.Quantity</p></td>
                     <td><p>@b.Price</p></td>
-                    <td>
+                    <td style="padding-bottom: 0">
                         <p>
                             @if (b.Quantity > 0)
                             {
-                                @Html.ActionLink("Buy", "Buy", new { id = b.Id })
+                                @Html.ActionLink("Buy", "Buy", new { id = b.Id }, new { @class="btn btn-success", @style = "margin-right: 5px" })
                             }
                             else
                             {
@@ -49,8 +57,8 @@
 
                             @if ((string)Session["Email"] == "admin@bookstore.com")
                             {
-                                <text> | </text> @Html.ActionLink("Edit", "Edit", "Admin", new { id = b.Id }, null) <text> | </text>
-                                @Html.ActionLink("Delete", "Delete", "Admin", new { id = b.Id }, null)
+                                @Html.ActionLink("Edit", "Edit", "Admin", new { id = b.Id }, new { @class = "btn btn-info", @style = "margin-right: 10px" })
+                                @Html.ActionLink("Delete", "Delete", "Admin", new { id = b.Id }, new { @class = "btn btn-danger" })
                             }
 
                         </p>

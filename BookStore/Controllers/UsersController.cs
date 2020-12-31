@@ -39,8 +39,8 @@ namespace BookStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                var check = db.UserProfiles.FirstOrDefault(s => s.Email == _user.Email);
-                if (check == null)
+                var emailCheck = db.UserProfiles.FirstOrDefault(s => s.Email == _user.Email);
+                if (emailCheck == null)
                 {
                     _user.Password = GetMD5(_user.Password);
                     db.Configuration.ValidateOnSaveEnabled = false;
@@ -51,7 +51,7 @@ namespace BookStore.Controllers
                 }
                 else
                 {
-                    ViewBag.error = "Email already exists. Choose another one.";
+                    ViewBag.RegistrationEmailError = "Email already exists. Choose another one.";
                     return View();
                 }
             }
@@ -81,7 +81,7 @@ namespace BookStore.Controllers
                 }
                 else
                 {
-                    ViewBag.error = "Incorrect login or password! Try again.";
+                    ViewBag.LoginError = "Incorrect login or password! Try again.";
                     return View();
                 }
             }

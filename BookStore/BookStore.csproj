@@ -133,6 +133,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012151010160_InitialCreate.cs" />
+    <Compile Include="Migrations\202012151010160_InitialCreate.designer.cs">
+      <DependentUpon>202012151010160_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012301410308_AddBookstoreUpd.cs" />
+    <Compile Include="Migrations\202012301410308_AddBookstoreUpd.designer.cs">
+      <DependentUpon>202012301410308_AddBookstoreUpd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookContext.cs" />
     <Compile Include="Models\Purchase.cs" />
@@ -146,13 +155,16 @@
     </Content>
     <Content Include="Content\bootstrap-readable.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\counter.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\title.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\handleCounter.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -187,7 +199,14 @@
     <Content Include="Views\Admin\UsersData.cshtml" />
     <Content Include="Views\Admin\Delete.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012151010160_InitialCreate.resx">
+      <DependentUpon>202012151010160_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012301410308_AddBookstoreUpd.resx">
+      <DependentUpon>202012301410308_AddBookstoreUpd.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -200,6 +219,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

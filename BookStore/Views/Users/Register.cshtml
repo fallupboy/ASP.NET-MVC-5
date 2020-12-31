@@ -5,7 +5,7 @@
 
     <div class="row justify-content-md-center">
         <div class="col-md-5">
-            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+            @using (Html.BeginForm("Register", "Users", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
                 <div class="card">
@@ -32,7 +32,7 @@
                             <text>Password</text>
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
-                            <h4>@ViewBag.error</h4>
+                            <h4>@ViewBag.RegistrationEmailError</h4>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-info" value="Register" />

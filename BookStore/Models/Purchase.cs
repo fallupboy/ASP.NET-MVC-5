@@ -10,6 +10,7 @@ namespace BookStore.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public int BookId { get; set; }
+        public int Amount { get; set; }
         public string Address { get; set; }
         public DateTime Date { get; set; }
     }
