@@ -3015,6 +3015,7 @@ select[multiple].input-lg {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: .3s;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3030,6 +3031,7 @@ select[multiple].input-lg {
 .btn.focus {
   color: #333333;
   text-decoration: none;
+  
 }
 .btn:active,
 .btn.active {
@@ -4546,22 +4548,26 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-brand {
   color: #333333;
+  transition: .3s;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #333333;
-  background-color: transparent;
+    color: #333333;
+    background-color: transparent;
+    letter-spacing: 2px;
 }
 .navbar-inverse .navbar-text {
   color: #333333;
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #333333;
+  transition: .3s;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #333333;
-  background-color: transparent;
+  background-color: #ffe8bd;
+  letter-spacing: 2px;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,

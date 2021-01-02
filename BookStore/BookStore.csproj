@@ -141,6 +141,14 @@
     <Compile Include="Migrations\202012301410308_AddBookstoreUpd.designer.cs">
       <DependentUpon>202012301410308_AddBookstoreUpd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101021240088_BooktoreBookModelUpd.cs" />
+    <Compile Include="Migrations\202101021240088_BooktoreBookModelUpd.designer.cs">
+      <DependentUpon>202101021240088_BooktoreBookModelUpd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101021248288_BookstoreModelsUpd.cs" />
+    <Compile Include="Migrations\202101021248288_BookstoreModelsUpd.designer.cs">
+      <DependentUpon>202101021248288_BookstoreModelsUpd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookContext.cs" />
@@ -205,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012301410308_AddBookstoreUpd.resx">
       <DependentUpon>202012301410308_AddBookstoreUpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101021240088_BooktoreBookModelUpd.resx">
+      <DependentUpon>202101021240088_BooktoreBookModelUpd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101021248288_BookstoreModelsUpd.resx">
+      <DependentUpon>202101021248288_BookstoreModelsUpd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -35,25 +35,34 @@ namespace BookStore.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(UserProfile _user)
+        public ActionResult Register(UserProfile _user, string passRepeat)
         {
             if (ModelState.IsValid)
             {
                 var emailCheck = db.UserProfiles.FirstOrDefault(s => s.Email == _user.Email);
                 if (emailCheck == null)
                 {
-                    _user.Password = GetMD5(_user.Password);
-                    db.Configuration.ValidateOnSaveEnabled = false;
-                    db.UserProfiles.Add(_user);
-                    db.SaveChanges();
-                    Session.Clear(); // remove session
-                    return RedirectToAction("Login");
+                    if (passRepeat != _user.Password )
+                    {
+                        ViewBag.RepeatPassError = "Password doesn't match. Try again";
+                        return View();
+                    }
+                    else
+                    {
+                        _user.Password = GetMD5(_user.Password);
+                        db.Configuration.ValidateOnSaveEnabled = false;
+                        db.UserProfiles.Add(_user);
+                        db.SaveChanges();
+                        Session.Clear(); // remove session
+                        return RedirectToAction("Login");
+                    }
                 }
                 else
                 {
                     ViewBag.RegistrationEmailError = "Email already exists. Choose another one.";
                     return View();
                 }
+                
             }
             return View();
         }

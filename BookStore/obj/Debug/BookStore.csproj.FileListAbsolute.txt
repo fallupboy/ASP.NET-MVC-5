@@ -166,3 +166,5 @@ D:\#STUDY\Code\C#\#Recovery\BookStore\obj\Debug\BookStore.Migrations.AddBookstor
 D:\#STUDY\Code\C#\BookStore\obj\Debug\BookStore.Migrations.InitialCreate.resources
 D:\#STUDY\Code\C#\BookStore\obj\Debug\BookStore.Migrations.AddBookstoreUpd.resources
 D:\#STUDY\Code\C#\BookStore\obj\Debug\BookStore.csproj.GenerateResource.cache
+D:\#STUDY\Code\C#\BookStore\obj\Debug\BookStore.Migrations.BooktoreBookModelUpd.resources
+D:\#STUDY\Code\C#\BookStore\obj\Debug\BookStore.Migrations.BookstoreModelsUpd.resources

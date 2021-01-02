@@ -1,7 +1,6 @@
 ﻿@model BookStore.Models.UserProfile
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    @Styles.Render("~/Content/css")
 }
 
 <div class="row justify-content-md-center">
@@ -16,17 +15,13 @@
                     @Html.AntiForgeryToken()
                     <div class="form-group">
                         <text>Email</text>
-                        <input class="form-control" placeholder="Login" type="text" name="email" required />
-
+                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", placeholder = "Email" })
                     </div>
                     <div class="form-group">
                         <text>Password</text>
-                        <input class="form-control" placeholder="Password" type="password" name="password" required />
-
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
                     </div>
-                    <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-info" value="Login" />
-                    </div>
+                    <input type="submit" name="submit" class="btn btn-info" value="Login" />
                 }
             </div>
         </div>

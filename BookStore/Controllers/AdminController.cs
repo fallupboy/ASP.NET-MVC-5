@@ -29,9 +29,13 @@ namespace BookStore.Controllers
         [HttpPost]
         public ActionResult Add(Book book)
         {
-            db.Books.Add(book);
-            db.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            if (ModelState.IsValid)
+            {
+                db.Books.Add(book);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            return View(book);
         }
 
         // Edit book in the DB

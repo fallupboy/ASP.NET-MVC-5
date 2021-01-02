@@ -3,43 +3,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="row justify-content-md-center">
-        <div class="col-md-5">
-            @using (Html.BeginForm("Register", "Users", FormMethod.Post))
-            {
-                @Html.AntiForgeryToken()
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Register</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <text>First Name</text>
-                            @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", @placeholder = "First Name" })
-                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "badge badge-danger" })
-                        </div>
-                        <div class="form-group">
-                            <text>Last Name</text>
-                            @Html.TextBoxFor(m => m.LastName, "", new { @class = "form-control", @placeholder = "Last Name" })
-                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "badge badge-danger" })
-                        </div>
-                        <div class="form-group">
-                            <text>Email</text>
-                            @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @placeholder = "Email" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
-                        </div>
-                        <div class="form-group">
-                            <text>Password</text>
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
-                            <h4>@ViewBag.RegistrationEmailError</h4>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn btn-info" value="Register" />
-                        </div>
-                    </div>
+<div class="row justify-content-md-center">
+    <div class="col-md-5">
+        @using (Html.BeginForm("Register", "Users", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="card-body">
+                <div class="card-header">
+                    <h3>Register</h3>
                 </div>
-            }
-        </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <text>First Name</text>
+                        @Html.TextBoxFor(m => m.FirstName, "", new { @class = "form-control", placeholder = "First Name" })
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "badge badge-danger" })
+                    </div>
+                    <div class="form-group">
+                        <text>Last Name</text>
+                        @Html.TextBoxFor(m => m.LastName, "", new { @class = "form-control", placeholder = "Last Name" })
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "badge badge-danger" })
+                    </div>
+                    <div class="form-group">
+                        <text>Email</text>
+                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", placeholder = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "badge badge-danger" })
+                    </div>
+                    <div class="form-group">
+                        <text>Password</text>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
+                    </div>
+                    <div class="form-group">
+                        <text>Repeat Password</text>
+                        @Html.Password("passRepeat", "", new { @class = "form-control", placeholder = "Password" })
+                        <h4>@ViewBag.RepeatPassError</h4>
+                        <h4>@ViewBag.RegistrationEmailError</h4>
+                    </div>
+                    <input type="submit" name="submit" class="btn btn-info" value="Register" />
+                </div>
+            </div>
+        }
     </div>
-
+</div>

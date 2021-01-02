@@ -30,6 +30,14 @@
                         <li>@Html.ActionLink("Login", "Login", "Users")</li>
                     }
                 </ul>
+                    @if ((string)Session["Email"] == "admin@bookstore.com")
+                    {
+                        <ul class="nav navbar-nav" style="float: right;">
+                            <li>@Html.ActionLink("Add Book", "Add", "Admin", null, new { @class= "btn btn-info" })</li>
+                            <li>@Html.ActionLink("All Purchases", "PurchasesData", "Admin", null, new { @class = "btn btn-info" })</li> 
+                            <li>@Html.ActionLink("All Users", "UsersData", "Admin", null, new { @class = "btn btn-info" })</li>
+                        </ul>
+                    }
             </div>
         </div>
     </div>
@@ -40,7 +48,6 @@
             <p style="text-align: center">&copy; @DateTime.Now.Year - BookStore</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
